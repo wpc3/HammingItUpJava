@@ -78,20 +78,26 @@ public class HammingTest {
         assertEquals(9, new Hamming("GGACGGATTCTG", "AGGACGGATTCT").getHammingDistance());
     }
 
+
+
     @Test
-    public void testValidatesFirstStrandNotLonger() {
+    public void testValidatesFirstStrandNotLonger()  {
         expectedException.expect(IllegalArgumentException.class);
+
         expectedException.expectMessage("leftStrand and rightStrand must be of equal length.");
 
         new Hamming("AATG", "AAA");
     }
 
     @Test
-    public void testValidatesSecondStrandNotLonger() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("leftStrand and rightStrand must be of equal length.");
+    public void testValidatesSecondStrandNotLonger()  {
 
-        new Hamming("ATA", "AGTG");
+            expectedException.expect(IllegalArgumentException.class);
+            expectedException.expectMessage("leftStrand and rightStrand must be of equal length.");
+
+            new Hamming("ATA", "AGTG");
+        }
+
     }
 
-}
+
